@@ -1,7 +1,7 @@
 package com.marcos.acervo_pessoal_api.model;
 
 import jakarta.persistence.*;
-import org.hibernate.validator.constraints.UniqueElements;
+
 
 import java.time.LocalDate;
 
@@ -32,7 +32,7 @@ public class Livro {
     public Livro() {
     }
 
-    public Livro(Long id, String titulo, String autor, String editora, String isbn, boolean disponibilidade, boolean lido, LocalDate dataPublicacao) {
+    public Livro(Long id, String titulo, String autor,Categoria categoria, String editora, String isbn, boolean disponibilidade, boolean lido, LocalDate dataPublicacao) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -41,6 +41,7 @@ public class Livro {
         this.disponibilidade = disponibilidade;
         this.lido = lido;
         this.dataPublicacao = dataPublicacao;
+        this.categoria = categoria;
     }
 
     public Long getId() {
